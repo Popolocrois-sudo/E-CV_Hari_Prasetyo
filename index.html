@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hari Prasetyo | Portfolio</title>
+<meta name="description" content="Online portfolio of Hari Prasetyo – IT Helpdesk & Operation professional and Information Systems student.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E1116;--surface:#161B22;--line:#2A323E;--text:#E8ECF1;--mute:#9AA5B4;--accent:#3DDC97;--ink:#04130C}
+:root[data-theme="light"]{--bg:#F4F6F8;--surface:#FFFFFF;--line:#D5DCE4;--text:#11161D;--mute:#4A5666;--accent:#0B7A4B;--ink:#FFFFFF}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Space Grotesk',system-ui,sans-serif;font-size:17px;line-height:1.6;transition:background .25s,color .25s}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;font-size:15px;color:var(--text)}
+.mono{font-family:'JetBrains Mono',monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.mute{color:var(--mute)}
+.label{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent)}
+h2{margin:8px 0 24px;font-size:clamp(30px,5vw,44px);letter-spacing:-.02em;line-height:1.1}
+section{padding:72px 0 0}
+/* nav */
+header{border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;background:var(--bg)}
+.nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:10px 24px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px}
+.logo{width:36px;height:36px;border-radius:8px;background:var(--accent);color:var(--ink);display:flex;align-items:center;justify-content:center;font:500 14px 'JetBrains Mono',monospace}
+nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px;font:400 13px 'JetBrains Mono',monospace}
+nav a{color:var(--mute);padding:12px 4px}
+nav a:hover,nav a.active{color:var(--accent)}
+.icon-btn{width:44px;height:44px;border-radius:10px;border:1px solid var(--line);background:var(--surface);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.icon-btn svg{width:20px;height:20px}
+[data-theme="dark"] .moon,[data-theme="light"] .sun{display:none}
+/* hero */
+.hero{display:flex;flex-wrap:wrap;gap:48px;align-items:center;padding-top:72px}
+.hero-text{flex:999 1 420px;min-width:0}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font:400 13px 'JetBrains Mono',monospace;color:var(--mute)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+h1{margin:24px 0 0;font-size:clamp(44px,8vw,84px);line-height:1.02;letter-spacing:-.03em}
+.typing{margin:20px 0 0;font:400 clamp(16px,2.4vw,22px) 'JetBrains Mono',monospace;color:var(--accent);min-height:34px}
+.caret{animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{margin:20px 0 0;max-width:580px;color:var(--mute);font-size:18px}
+.btns{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{min-height:48px;padding:0 24px;display:inline-flex;align-items:center;border-radius:10px;font-weight:700;border:1px solid var(--line);cursor:pointer;background:transparent;color:var(--text);font-size:16px}
+.btn.primary{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+.card{border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+.profile{flex:1 1 300px;min-width:0;overflow:hidden}
+.profile .bar{padding:12px 18px;border-bottom:1px solid var(--line);font:400 12px 'JetBrains Mono',monospace;color:var(--mute);display:flex;justify-content:space-between}
+.photo{display:block;width:100%;max-width:280px;margin:18px auto 0;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;border-radius:12px;border:2px solid var(--accent)}
+.profile dl{margin:0;padding:20px 18px;display:flex;flex-direction:column;gap:16px;font:400 14px 'JetBrains Mono',monospace}
+.profile dt{color:var(--mute);font-size:12px}
+.profile dd{margin:0}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;padding-top:32px}
+.stat{padding:20px}
+.stat b{display:block;font-size:36px;letter-spacing:-.02em;color:var(--accent)}
+.stat span{font:400 13px 'JetBrains Mono',monospace;color:var(--mute)}
+/* about */
+.cols{display:flex;flex-wrap:wrap;gap:32px}
+.cols p{flex:1 1 360px;margin:0;color:var(--mute)}
+/* experience */
+.exp{display:flex;flex-wrap:wrap;gap:20px;align-items:stretch}
+.jobs{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.job{text-align:left;cursor:pointer;padding:16px 18px;min-height:44px;border-radius:12px;border:1px solid var(--line);background:transparent;font-size:16px;line-height:1.4}
+.job.on{background:var(--surface);border-color:var(--accent)}
+.job small{display:block;font:400 12px 'JetBrains Mono',monospace;color:var(--mute)}
+.job.on small{color:var(--accent)}
+.job strong{display:block;margin-top:2px}
+.job span{color:var(--mute);font-size:15px}
+.detail{flex:999 1 380px;min-width:0;padding:28px;display:flex;flex-direction:column;gap:20px}
+.segs{display:flex;gap:6px}
+.segs i{flex:1;height:6px;border-radius:3px;background:var(--line);transition:background .25s}
+.segs i.on{background:var(--accent)}
+.detail h3{margin:0;font-size:clamp(26px,4vw,36px);letter-spacing:-.02em;line-height:1.15}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.facts small{display:block;font:400 12px 'JetBrains Mono',monospace;color:var(--mute)}
+.facts div div{font-weight:500}
+.pager{display:flex;gap:10px;margin-top:auto}
+.ghost{min-height:44px;padding:0 18px;border-radius:10px;border:1px solid var(--line);background:transparent;cursor:pointer}
+.ghost:hover,.job:hover{border-color:var(--accent)}
+/* education */
+.edu{border-top:1px solid var(--line)}
+.row{display:flex;flex-wrap:wrap;gap:8px 32px;padding:20px 0;border-bottom:1px solid var(--line)}
+.row .y{flex:0 0 170px;font:400 14px 'JetBrains Mono',monospace;color:var(--accent)}
+.row .t{flex:1 1 280px}
+.row b{display:block;font-size:19px}
+.row[hidden]{display:none}
+/* more */
+.grid2{display:flex;flex-wrap:wrap;gap:20px}
+.award{flex:1 1 320px;padding:28px}
+.award .big{font-size:64px;font-weight:700;letter-spacing:-.03em;color:var(--accent);line-height:1.1;margin:8px 0}
+.stack{flex:1 1 320px;display:flex;flex-direction:column;gap:20px}
+.stack .card{padding:24px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg);font-size:15px;transition:border-color .2s,transform .2s}
+.chip:hover{border-color:var(--accent);transform:translateY(-2px)}
+.chip.lang{border-color:var(--accent)}
+/* contact */
+.cta{padding:clamp(28px,5vw,56px);border-radius:20px;background:var(--accent);color:var(--ink)}
+.cta h2{margin:8px 0 12px;font-size:clamp(32px,6vw,56px);letter-spacing:-.03em;line-height:1.05}
+.cta p{margin:0 0 28px;max-width:560px;font-size:18px}
+.cta .btn{border:2px solid var(--ink);color:var(--ink);background:transparent}
+.cta .btn.solid{background:var(--ink);color:var(--accent)}
+footer{margin-top:72px;border-top:1px solid var(--line)}
+footer .wrap{padding:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font:400 13px 'JetBrains Mono',monospace;color:var(--mute)}
+/* reveal */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.caret{animation:none}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap nav">
+<a href="#top" class="brand"><span class="logo">HP</span>Hari Prasetyo</a>
+<nav aria-label="Main">
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#education">Education</a>
+<a href="#more">Awards &amp; Skills</a>
+<a href="#contact">Contact</a>
+<button class="icon-btn" id="theme" aria-label="Switch to light theme">
+<svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+<svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+</button>
+</nav>
+</div>
+</header>
+
+<main>
+<div class="wrap">
+<section id="top" class="hero" style="padding-top:72px">
+<div class="hero-text">
+<div class="pill"><span class="dot"></span>Tambun Selatan, Bekasi · Indonesia</div>
+<h1>Hari<br>Prasetyo</h1>
+<p class="typing">&gt; <span id="typed"></span><span class="caret">_</span></p>
+<p class="lead">An IT Helpdesk &amp; Operation professional with hands-on experience in manufacturing environments, and an Information Systems student at Universitas Bina Sarana Informatika. Interested in IT operational support, graphic design, photography, videography and pop culture.</p>
+<div class="btns">
+<a class="btn primary" href="#experience">View experience</a>
+<a class="btn" href="#contact">Get in touch</a>
+</div>
+</div>
+<aside class="card profile">
+<div class="bar"><span>profile.json</span><span>status: active</span></div>
+<img class="photo" src="photo.jpg" alt="Portrait of Hari Prasetyo" width="749" height="1000">
+<dl>
+<div><dt>current_role</dt><dd>IT Helpdesk &amp; Operation</dd></div>
+<div><dt>company</dt><dd>PT. Astemo Bekasi Manufacturing</dd></div>
+<div><dt>studying</dt><dd>B.Sc. Information Systems</dd></div>
+<div><dt>languages</dt><dd>Indonesian · English · Japanese</dd></div>
+</dl>
+</aside>
+</section>
+
+<div class="stats">
+<div class="card stat"><b>2016</b><span>Working since</span></div>
+<div class="card stat"><b>4</b><span>Companies</span></div>
+<div class="card stat"><b>3</b><span>Languages</span></div>
+<div class="card stat"><b>1st</b><span>Regency web design winner</span></div>
+</div>
+
+<section id="about" class="reveal">
+<div class="label">01 / About</div>
+<h2>Operations-minded, creative at heart</h2>
+<div class="cols">
+<p>My career started on the manufacturing floor in material control and PPIC, then moved into IT support as a Solution Desk Staff member and now IT Helpdesk &amp; Operation. That path gave me a practical view of how technology keeps production running.</p>
+<p>Alongside work, I am pursuing a bachelor's degree in Information Systems. Outside the office I enjoy graphic design, photography, videography and cosplay, and I follow pop culture closely.</p>
+</div>
+</section>
+
+<section id="experience" class="reveal">
+<div class="label">02 / Experience</div>
+<h2 style="margin-bottom:8px">Work history</h2>
+<p class="mute" style="margin:0 0 28px">Select a role to see its details.</p>
+<div class="exp">
+<div class="jobs" id="jobs" role="group" aria-label="Roles"></div>
+<div class="card detail">
+<div class="segs" id="segs" aria-hidden="true"></div>
+<div class="mono mute" style="font-size:13px" id="step"></div>
+<h3 id="d-role"></h3>
+<div class="facts">
+<div><small>Company</small><div id="d-company"></div></div>
+<div><small>Period</small><div id="d-period"></div></div>
+<div><small>Industry</small><div>Manufacturing</div></div>
+<div><small>Function</small><div id="d-area"></div></div>
+</div>
+<div class="pager">
+<button class="ghost" id="prev">← Newer</button>
+<button class="ghost" id="next">Earlier →</button>
+</div>
+</div>
+</div>
+</section>
+
+<section id="education" class="reveal">
+<div class="label">03 / Education</div>
+<h2 style="margin-bottom:28px">Academic background</h2>
+<div class="edu">
+<div class="row"><div class="y">2023 – Present</div><div class="t"><b>Universitas Bina Sarana Informatika</b><span class="mute">Bachelor's degree (S1), Information Systems</span></div></div>
+<div class="row"><div class="y">2012 – 2015</div><div class="t"><b>SMK Negeri 1 Bulukerto</b><span class="mute">Vocational high school</span></div></div>
+<div class="row early" hidden><div class="y">2009 – 2012</div><div class="t"><b>SMP Negeri 3 Bulukerto</b><span class="mute">Junior high school</span></div></div>
+<div class="row early" hidden><div class="y">2003 – 2009</div><div class="t"><b>SD Negeri 1 Conto</b><span class="mute">Elementary school</span></div></div>
+</div>
+<button class="ghost" id="more-edu" style="margin-top:20px;background:var(--surface)" aria-expanded="false">Show earlier schooling</button>
+</section>
+
+<section id="more" class="reveal">
+<div class="label">04 / Awards &amp; Skills</div>
+<h2 style="margin-bottom:28px">Beyond the job title</h2>
+<div class="grid2">
+<div class="card award">
+<div class="mono mute" style="font-size:12px">Achievement · 2014</div>
+<div class="big">1st</div>
+<b style="font-size:19px">Web Design Technology Competition</b>
+<div class="mute">Won first place at the regency level.</div>
+</div>
+<div class="stack">
+<div class="card"><div class="mono mute" style="font-size:12px;margin-bottom:12px">Languages</div>
+<div class="chips"><span class="chip lang">Indonesian</span><span class="chip lang">English</span><span class="chip lang">Japanese</span></div></div>
+<div class="card"><div class="mono mute" style="font-size:12px;margin-bottom:12px">Hobbies &amp; interests</div>
+<div class="chips"><span class="chip">Graphic design</span><span class="chip">Photography</span><span class="chip">Videography</span><span class="chip">Cosplay</span><span class="chip">Pop culture</span></div></div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="reveal">
+<div class="cta">
+<div class="mono" style="font-size:13px">05 / Contact</div>
+<h2>Let's work together</h2>
+<p>Open to conversations about IT operations, helpdesk and creative collaborations. Reach out by email or phone.</p>
+<div class="btns" style="margin-top:0">
+<a class="btn solid" href="mailto:hariprasetyo1607@gmail.com">shin.hariday@proton.com</a>
+<button class="btn" id="copy">Copy email</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr"></span> Hari Prasetyo</span><a href="#top" style="padding:8px 0">Back to top ↑</a></div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  // theme
+  var saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+  if(!saved&&window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)saved='light';
+  if(saved)root.setAttribute('data-theme',saved);
+  var tb=document.getElementById('theme');
+  function label(){tb.setAttribute('aria-label',root.getAttribute('data-theme')==='dark'?'Switch to light theme':'Switch to dark theme')}
+  label();
+  tb.addEventListener('click',function(){
+    var n=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',n);label();
+    try{localStorage.setItem('theme',n)}catch(e){}
+  });
+  // typing
+  var roles=['IT Helpdesk & Operation','Information Systems Student','Design, Photo & Video Enthusiast'];
+  var el=document.getElementById('typed'),ri=0,ci=0,hold=0;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=roles[0]}
+  else setInterval(function(){
+    var full=roles[ri];
+    if(ci<full.length){ci++;el.textContent=full.slice(0,ci)}
+    else if(hold<18){hold++}
+    else{hold=0;ci=0;ri=(ri+1)%roles.length}
+  },90);
+  // experience
+  var jobs=[
+    {p:'2022 – Present',r:'IT Helpdesk & Operation',c:'PT. Astemo Bekasi Manufacturing',a:'IT support & operations',t:'Current role'},
+    {p:'2020 – 2022',r:'Solution Desk Staff',c:'PT. Hitachi Astemo Bekasi Manufacturing',a:'IT solution desk',t:'Previous role'},
+    {p:'2018 – 2019',r:'PPIC Operator',c:'PT. Shinto Kogyo Indonesia',a:'Production planning & inventory control',t:'Previous role'},
+    {p:'2016 – 2018',r:'Material Control Operator – Receiving',c:'PT. Yamaha Music Manufacturing Asia',a:'Material control (receiving)',t:'First role'}
+  ];
+  var cur=0,list=document.getElementById('jobs'),segs=document.getElementById('segs');
+  jobs.forEach(function(j,i){
+    var b=document.createElement('button');b.className='job';b.type='button';
+    b.innerHTML='<small></small><strong></strong><span></span>';
+    b.children[0].textContent=j.p;b.children[1].textContent=j.r;b.children[2].textContent=j.c;
+    b.addEventListener('click',function(){cur=i;draw()});
+    list.appendChild(b);
+    segs.appendChild(document.createElement('i'));
+  });
+  function draw(){
+    var j=jobs[cur];
+    [].forEach.call(list.children,function(b,i){b.classList.toggle('on',i===cur);b.setAttribute('aria-pressed',i===cur)});
+    [].forEach.call(segs.children,function(s,i){s.classList.toggle('on',i<=cur)});
+    document.getElementById('step').textContent='Position '+(cur+1)+' of '+jobs.length+' · '+j.t;
+    document.getElementById('d-role').textContent=j.r;
+    document.getElementById('d-company').textContent=j.c;
+    document.getElementById('d-period').textContent=j.p;
+    document.getElementById('d-area').textContent=j.a;
+  }
+  document.getElementById('prev').addEventListener('click',function(){cur=(cur+jobs.length-1)%jobs.length;draw()});
+  document.getElementById('next').addEventListener('click',function(){cur=(cur+1)%jobs.length;draw()});
+  draw();
+  // education toggle
+  var me=document.getElementById('more-edu'),open=false;
+  me.addEventListener('click',function(){
+    open=!open;
+    [].forEach.call(document.querySelectorAll('.early'),function(r){r.hidden=!open});
+    me.textContent=open?'Hide earlier schooling':'Show earlier schooling';
+    me.setAttribute('aria-expanded',open);
+  });
+  // copy email
+  var cb=document.getElementById('copy');
+  cb.addEventListener('click',function(){
+    var mail='hariprasetyo1607@gmail.com';
+    function ok(){cb.textContent='Copied ✓';setTimeout(function(){cb.textContent='Copy email'},2000)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(mail).then(ok,function(){})}
+  });
+  // reveal + active nav
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  [].forEach.call(document.querySelectorAll('.reveal'),function(s){io.observe(s)});
+  var links=[].slice.call(document.querySelectorAll('nav a'));
+  var so=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id)})}
+  })},{rootMargin:'-40% 0px -55% 0px'});
+  [].forEach.call(document.querySelectorAll('section[id]'),function(s){so.observe(s)});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
